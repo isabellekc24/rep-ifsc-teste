@@ -1,1 +1,6 @@
 macaco
+baleia
+cachorro
+gato
+pato
+tubarao
