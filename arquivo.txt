@@ -1,2 +1,2 @@
-arquivo de texto
-concatenado
+adicionanado mais texto
+concatenando o texto
