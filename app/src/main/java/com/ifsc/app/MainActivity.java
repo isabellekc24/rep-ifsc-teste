@@ -1,6 +1,8 @@
 package com.ifsc.app;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +10,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity { //essa é a tela activity
 
+    int contador = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button button = findViewById(R.id.button);
+        TextView textView = findViewById(R.id.textView);
+
+        button.setOnClickListener(view -> {
+            contador++;
+            textView.setText(Integer.toString(contador)); //converter o numero do contador para string
+
+        });
+
     }
 }
