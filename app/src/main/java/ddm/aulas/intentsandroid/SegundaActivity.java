@@ -1,6 +1,8 @@
 package ddm.aulas.intentsandroid;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +13,16 @@ public class SegundaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda);
 
-        TextView txtNome = findViewById(R.id.txtNome);
-        String nome = getIntent().getStringExtra("nome");
-        txtNome.setText("Bem-vindo, " + nome + "!");
-    }
+        Button btnVoltar = findViewById(R.id.btnVoltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        //add o que deseja
 
+    }
 
 
 }

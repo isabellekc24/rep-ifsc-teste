@@ -3,6 +3,7 @@ package ddm.aulas.intentsandroid;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -19,20 +20,17 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        /*EXPLICAR ddd*/
         Button bIntExplicita = findViewById(R.id.bIntExplicita);
         Button bIntImplicita = findViewById(R.id.bIntImplicita);
 
-        // Intent Explícita - abre outra Activity do próprio app
         bIntExplicita.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SegundaActivity.class);
-            intent.putExtra("nome", "Isabelle");
             startActivity(intent);
+
         });
 
-        // Intent Implícita - abre o navegador (app do sistema decide)
         bIntImplicita.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uniasselvi.com.br"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://moodle.ifsc.edu.br/"));
             startActivity(intent);
         });
 
