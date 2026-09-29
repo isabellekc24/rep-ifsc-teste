@@ -35,8 +35,24 @@ public class SimplePaint extends View {
         float x = event.getX();
         float y = event.getY();
 
-        path.lineTo(x,y);
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                path.moveTo(x,y);
+                return true;
+            case MotionEvent.ACTION_MOVE:
+                path.lineTo(x,y);
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+            default:
+                return false;
+        }
+
         invalidate();
-        return super.onTouchEvent(event);
+        return true;
+    }
+
+    public void setcolor(int color){
+        paint.setColor(color);
     }
 }
